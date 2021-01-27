@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, Input } from '@angular/core';
+import { Meal } from '../meals';
 
 @Component({
   selector: 'app-meal-item',
@@ -7,6 +8,8 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 })
 
 export class MealItemComponent implements OnInit {
+
+  @Input() meal: Meal;
 
   constructor() { }
 

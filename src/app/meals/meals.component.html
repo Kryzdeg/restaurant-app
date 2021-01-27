@@ -1,12 +1,5 @@
 <div class="card-row">
-   <div class="card-col">
-      <app-meal-item></app-meal-item>
-   </div>
-   <div class="card-col">
-      <app-meal-item></app-meal-item>
-      <app-meal-item></app-meal-item>
-   </div>
-   <div class="card-col">
-      <app-meal-item></app-meal-item>
+   <div class="card-col" *ngFor="let meal of meals">
+      <app-meal-item [meal]="meal"></app-meal-item>
    </div>
 </div>
