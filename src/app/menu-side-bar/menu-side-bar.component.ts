@@ -10,24 +10,36 @@ export class MenuSideBarComponent implements OnInit {
 
   items: NbMenuItem[] = [
     {
-      title: 'Śniadania',
+      title: 'Posiłki',
       icon: 'book-open-outline',
-    },
-    {
-      title: 'Dania główne',
-      icon: 'star-outline',
-    },
-    {
-      title: 'Desery',
-      icon: 'heart',
-    },
-    {
-      title: 'Napoje',
-      icon: 'droplet',
+      expanded: true,
+      children: [
+        {
+          title: 'Wszystko',
+          link: '/meals'
+        },
+        {
+          title: 'Przystawki',
+          icon: 'book-open-outline',
+        },
+        {
+          title: 'Dania główne',
+          icon: 'star-outline',
+        },
+        {
+          title: 'Korea Grill',
+          icon: 'heart',
+        },
+        {
+          title: 'Herbaty',
+          icon: 'droplet',
+        },
+      ]
     },
     {
       title: 'Koszyk',
       icon: 'credit-card',
+      link: '/cart'
     },
   ];
 

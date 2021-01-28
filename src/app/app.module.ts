@@ -10,13 +10,15 @@ import { MenuSideBarComponent } from './menu-side-bar/menu-side-bar.component';
 import { MealsComponent } from './meals/meals.component';
 import { MealItemComponent } from './meal-item/meal-item.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuSideBarComponent,
     MealsComponent,
-    MealItemComponent
+    MealItemComponent,
+    CartComponent
   ],
   imports: [
     HttpClientModule,
