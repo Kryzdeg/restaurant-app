@@ -12,29 +12,7 @@ export class MenuSideBarComponent implements OnInit {
     {
       title: 'Posiłki',
       icon: 'book-open-outline',
-      expanded: true,
-      children: [
-        {
-          title: 'Wszystko',
-          link: '/meals'
-        },
-        {
-          title: 'Przystawki',
-          icon: 'book-open-outline',
-        },
-        {
-          title: 'Dania główne',
-          icon: 'star-outline',
-        },
-        {
-          title: 'Korea Grill',
-          icon: 'heart',
-        },
-        {
-          title: 'Herbaty',
-          icon: 'droplet',
-        },
-      ]
+      link: '/meals'
     },
     {
       title: 'Koszyk',

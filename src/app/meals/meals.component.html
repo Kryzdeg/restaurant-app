@@ -1,5 +1,14 @@
-<div class="card-row">
-   <div class="card-col" *ngFor="let meal of meals">
-      <app-meal-item [meal]="meal"></app-meal-item>
+<nb-card>
+   <nb-card-body>
+      <nb-route-tabset [tabs]="tabs" fullWidth></nb-route-tabset>
+   </nb-card-body>
+ </nb-card>
+
+
+<div *ngFor="let m of meals; let i=index">
+   <div class="card-row" *ngIf="i % 3 === 0">
+      <div class="card-col" *ngFor="let meal of meals | slice:i:i+3">
+         <app-meal-item [meal]="meal"></app-meal-item>
+      </div>
    </div>
 </div>
