@@ -13,9 +13,7 @@ export class MealItemComponent implements OnInit {
   @Input() meal: Meal;
 
   addToCart(): void {
-    this.cartService.addToCart(this.meal);
-    console.log(this.cartService.countMeals());
-    
+    this.cartService.addToCart(this.meal);    
   }
 
   constructor(private cartService: CartService) { }
