@@ -1,14 +1,19 @@
 <nb-card>
    <nb-card-body>
-      <nb-route-tabset [tabs]="tabs" fullWidth></nb-route-tabset>
+      <nb-tabset (changeTab)="onTabChange($event)">
+         <nb-tab tabTitle="Wszystko">
+            <app-meals-list [meals]="meals"></app-meals-list>
+          </nb-tab>
+         <nb-tab tabTitle="Przystawki">
+            <app-meals-list [meals]="meals"></app-meals-list>
+         </nb-tab>
+         <nb-tab tabTitle="Dania główne">
+            <app-meals-list [meals]="meals"></app-meals-list>
+         </nb-tab>
+         <nb-tab tabTitle="Koreański Grill">
+            <app-meals-list [meals]="meals"></app-meals-list>
+         </nb-tab>
+       </nb-tabset>
    </nb-card-body>
  </nb-card>
 
-
-<div *ngFor="let m of meals; let i=index">
-   <div class="card-row" *ngIf="i % 3 === 0">
-      <div class="card-col" *ngFor="let meal of meals | slice:i:i+3">
-         <app-meal-item [meal]="meal"></app-meal-item>
-      </div>
-   </div>
-</div>

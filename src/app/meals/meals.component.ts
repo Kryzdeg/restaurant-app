@@ -10,37 +10,43 @@ import { Meal } from "../meals";
 })
 export class MealsComponent implements OnInit {
 
-  meals: Meal[];
-
-  tabs: any[] = [
-    {
-      title: 'Przystawski',
-      route: '/tab1',
-    },
-    {
-      title: 'Dania główne',
-      responsive: true,
-      route: '/tab2' ,
-    },
-    {
-      title: 'Korean Grill',
-      responsive: true,
-      route: '/tab3' ,
-    },
-    {
-      title: 'Herbaty',
-      responsive: true,
-      route: '/tab4' ,
-    },
-  ];
+  all_meals: Meal[];
+  meals : Meal[];
 
   getMeals(): void {
     this.mealsService.getMeals()
-      .subscribe(meals => this.meals = meals);
+      .subscribe(meals => this.all_meals = this.meals = meals);
   }
 
+  getAllMeals(): void {
+    this.meals = this.all_meals;
+  } 
+
   getStarters(): void {
-    this.meals = this.meals.filter(s => s.meal_type === "starter");
+    this.meals = this.all_meals.filter(s => s.meal_type === "starter");
+  }
+  
+  getMainCourse(): void {
+    this.meals = this.all_meals.filter(s => s.meal_type === "dinner");
+  }
+  
+  getGrill(): void {
+    this.meals = this.all_meals.filter(s => s.meal_type === "grill");
+  }
+
+  onTabChange(event): void {
+    if (event.tabTitle === "Wszystko"){
+      this.getMeals();
+    }
+    else if (event.tabTitle === "Przystawki"){
+      this.getStarters();
+    }
+    else if (event.tabTitle === "Dania główne"){
+      this.getMainCourse();
+    }
+    else if (event.tabTitle === "Koreański Grill"){
+      this.getGrill();
+    }
   }
 
   constructor(private mealsService: MealsService) { }

@@ -1,0 +1,7 @@
+<div *ngFor="let m of meals; let i=index">
+    <div class="card-row" *ngIf="i % 3 === 0">
+       <div class="card-col" *ngFor="let meal of meals | slice:i:i+3">
+          <app-meal-item [meal]="meal"></app-meal-item>
+       </div>
+    </div>
+</div>

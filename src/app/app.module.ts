@@ -10,7 +10,7 @@ import { NbThemeModule,
         NbMenuModule,
         NbSidebarModule,
         NbCardModule,
-        NbRouteTabsetModule,
+        NbTabsetModule,
 } from '@nebular/theme';
 
 import { NbEvaIconsModule } from '@nebular/eva-icons';
@@ -19,6 +19,7 @@ import { MealsComponent } from './meals/meals.component';
 import { MealItemComponent } from './meal-item/meal-item.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CartComponent } from './cart/cart.component';
+import { MealsListComponent } from './meals-list/meals-list.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { CartComponent } from './cart/cart.component';
     MenuSideBarComponent,
     MealsComponent,
     MealItemComponent,
-    CartComponent
+    CartComponent,
+    MealsListComponent
   ],
   imports: [
     HttpClientModule,
@@ -38,7 +40,7 @@ import { CartComponent } from './cart/cart.component';
     NbEvaIconsModule,
     NbButtonModule,
     NbCardModule,
-    NbRouteTabsetModule,
+    NbTabsetModule,
     NbMenuModule.forRoot(),
     NbSidebarModule.forRoot(),
   ],
