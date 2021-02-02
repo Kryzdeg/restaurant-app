@@ -1,0 +1,11 @@
+.meal-name {
+    float: left;
+    width: 20%;
+    margin-top: 10px;
+}
+
+.meal-price {
+    float: right;
+    margin-right: 2rem;
+    margin-top: 10px;
+}

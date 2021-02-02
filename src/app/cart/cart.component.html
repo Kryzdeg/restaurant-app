@@ -1,1 +1,18 @@
-<p>cart works!</p>
+<nb-card size="small">
+    <nb-card-header>Twoje zamówienie:</nb-card-header>
+    <nb-list>
+        <nb-list-item *ngFor="let meal of cart.meals">
+        <div style="width: 100%">
+            <div class="meal-name">{{meal.name}} ({{meal.namek}})</div>
+
+            <div style="float: right;">
+                <button nbButton ghost status="danger" (click)="removeFromCart(meal)">
+                    <nb-icon icon="minus"></nb-icon>
+                </button>
+            </div>
+            <div class="meal-price">{{meal.price}} zł</div>
+        </div>
+        </nb-list-item>
+    </nb-list>
+    <nb-card-footer><div style="float: right;">Suma: {{cart.price_sum}} zł</div></nb-card-footer>
+</nb-card>

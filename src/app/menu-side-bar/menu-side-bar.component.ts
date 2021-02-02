@@ -14,7 +14,6 @@ export class MenuSideBarComponent implements OnInit {
         title: 'Posiłki',
         icon: 'book-open-outline',
         link: '/meals',
-        active: true
       },
       {
         title: 'Koszyk',
