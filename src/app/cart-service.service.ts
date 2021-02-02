@@ -48,7 +48,7 @@ export class CartService {
     this.toastrService.show(
       '',
       msg,
-      { position, status });
+      { position, status, limit: 4 });
   }
 
   constructor(private toastrService: NbToastrService) { }
