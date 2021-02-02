@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit, Input } from '@angular/core';
 import { Meal } from '../meals';
+import { CartService } from "../cart-service.service";
 
 @Component({
   selector: 'app-meal-item',
@@ -11,7 +12,13 @@ export class MealItemComponent implements OnInit {
 
   @Input() meal: Meal;
 
-  constructor() { }
+  addToCart(): void {
+    this.cartService.addToCart(this.meal);
+    console.log(this.cartService.countMeals());
+    
+  }
+
+  constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
   }

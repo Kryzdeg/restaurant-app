@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { NbMenuItem } from '@nebular/theme';
+import { CartService } from '../cart-service.service';
 
 @Component({
   selector: 'app-menu-side-bar',
@@ -17,11 +18,15 @@ export class MenuSideBarComponent implements OnInit {
     {
       title: 'Koszyk',
       icon: 'credit-card',
-      link: '/cart'
+      link: '/cart',
+      badge: {
+        text: this.cartService.countMeals().toString(),
+        status: 'success'
+      }
     },
   ];
 
-  constructor() { }
+  constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
   }

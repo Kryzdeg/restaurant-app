@@ -11,6 +11,7 @@ import { NbThemeModule,
         NbSidebarModule,
         NbCardModule,
         NbTabsetModule,
+        NbIconModule
 } from '@nebular/theme';
 
 import { NbEvaIconsModule } from '@nebular/eva-icons';
@@ -38,6 +39,7 @@ import { MealsListComponent } from './meals-list/meals-list.component';
     NbThemeModule.forRoot({ name: 'dark' }),
     NbLayoutModule,
     NbEvaIconsModule,
+    NbIconModule,
     NbButtonModule,
     NbCardModule,
     NbTabsetModule,

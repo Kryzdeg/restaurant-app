@@ -2,7 +2,13 @@
     <nb-card-front>
         <nb-card size="small" accent="info">
             <nb-card-header>
-                <h3>{{meal.name}} ({{meal.namek}})</h3>
+                <h3>
+                    {{meal.name}} ({{meal.namek}})
+                    <button nbButton ghost status="success" (click)="addToCart()">
+                        <nb-icon icon="plus"></nb-icon>
+                    </button>
+                </h3>
+                
             </nb-card-header>
         
             <nb-card-body>
