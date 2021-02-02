@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { Meal } from "./meals";
 import { Cart } from "./cart";
 
@@ -15,8 +15,11 @@ export class CartService {
     price_sum: 0,
   };
 
+  emitter = new EventEmitter();
+
   addToCart(meal: Meal): void {
     this.cart.meals.push(meal);
+    this.emitter.emit();
   }
 
   removeFromCart(meal: Meal): void {

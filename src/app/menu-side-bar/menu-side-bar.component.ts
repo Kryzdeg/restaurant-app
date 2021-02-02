@@ -29,6 +29,24 @@ export class MenuSideBarComponent implements OnInit {
   constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
+    this.cartService.emitter.subscribe(() => {
+      this.items = [
+          {
+            title: 'Posiłki',
+            icon: 'book-open-outline',
+            link: '/meals'
+          },
+          {
+            title: 'Koszyk',
+            icon: 'credit-card',
+            link: '/cart',
+            badge: {
+              text: this.cartService.countMeals().toString(),
+              status: 'success'
+            }
+          },
+        ];
+      })
   }
 
 }
