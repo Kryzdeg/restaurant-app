@@ -22,7 +22,8 @@ export class MealsService {
     };
   }
 
-  private mealsUrl = 'http://localhost:8000/api/meals/'
+  //private mealsUrl = 'http://localhost:8000/api/meals/'
+  private mealsUrl = 'http://kryzdeg.ct8.pl/api/meals/'
 
   getMeals(): Observable<Meal[]> {
     return this.http.get<Meal[]>(this.mealsUrl).pipe(
